@@ -4,7 +4,20 @@ Simple gRPC server/client implementation in .Net Core
 ## Greeter
 A Class Library project shared by both the Server and Client projects. Project hosts our protobuffer service definitions. 
 
-### Command to generate the gRPC code
+### Generating the Protocol Buffer
+
+#### Using Subsystem for Linux run the following commands:
+
+Update the packages list and install protobuf-compiler:
+
+    sudo apt-get update
+	sudo apt install protobuf-compiler
+
+Navigate the commandline to the Greeter project directory (where greetings.proto is located) and run:
+
+    protoc --proto_path=./ greetings.proto --csharp_out=./
+
+This will generate the Greetings.cs file on the root.
 
 **From the 'Greeter/' directory:**
 
