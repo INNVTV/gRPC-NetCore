@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Grpc.Core;
-using Greeter;
 
 namespace Greeting.Client
 {
