@@ -1,0 +1,46 @@
+﻿syntax = "proto3";
+
+// (Optional) Namespace definition
+option csharp_namespace = "ServiceDefinition.AccountServices";
+
+// The account service definition
+service Account{
+	rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {}
+	rpc CloseAccount(CloseAccountRequest) returns (CloseAccountResponse) {}
+}
+
+
+// The request message containing CreateAccount details
+message CreateAccountRequest {
+	string name = 1;
+	int32 id = 2;
+	bool active = 3;
+
+	enum AccountType {
+		FREE = 0;
+		STUDENT = 1;
+		ENTERPRISE = 2;
+	}
+
+	AccountType type = 4;
+}
+
+
+// The response message containing results of the CreateAccount command
+message CreateAccountResponse {
+	bool isSuccess = 1;
+	string message = 2;
+}
+
+
+// The request message containing CloseAccount details
+message CloseAccountRequest {
+	int32 id = 1;
+}
+
+
+// The response message containing results of the CloseAccount command
+message CloseAccountResponse {
+	bool isSuccess = 1;
+	string message = 2;
+}
