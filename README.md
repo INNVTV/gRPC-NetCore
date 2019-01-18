@@ -15,7 +15,7 @@ Set your .proto file properties to use the following **Build Action**:
 
 ![service-definition-1](https://github.com/INNVTV/gRPC-NetCore/blob/master/_docs/imgs/service-definition-1.png)
 
-Once you add ths project to the Client/Server solutions you and include it as a project dependancy you will be able to use the service definition liek you would any C# class:
+Once you add ths project to the Client/Server solutions as a project dependancy you will be able to use the service definition like you would any C# class:
 
 
     var createAccountRequest = new ServiceDefinition.AccountServices.CreateAccountRequest {
